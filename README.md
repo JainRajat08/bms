@@ -1,6 +1,7 @@
 # Banking Management System (BMS)
 
 TECHNOLOGIES: Java, Servlets, JSP, Html, CSS, JavaScript.
+
 TOOLS: Eclipse, Tomcat.
 
 DESCRIPTION: BMS is built to automate the process of managing bank activities like opening new account,
