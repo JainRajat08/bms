@@ -1,0 +1,132 @@
+create table Admin
+( uname varchar2(50) not null,
+  password varchar2(50) not null
+);
+
+
+insert into Admin values('admin','admin');
+
+
+create table Customerinfo
+(
+Customer_id varchar2(50) primary key,
+FirstName varchar2(50) not null,
+LastName varchar2(50) not null,
+RegistrationDate Date not null,
+Approvestatus varchar2(50) default 'pending',
+Accountno varchar2(50),
+ActivationDate Date,
+UserName varchar2(50) not null,
+password varchar2(50) not null,
+GuardianType varchar2(50) not null,
+GuardianName varchar2(50) not null,
+address varchar2(50) not null,
+citizenship varchar2(50) not null,
+country varchar2(50) not null,
+state varchar2(50) not null,
+CountryId varchar2(50) not null,
+email varchar2(50) not null,
+gender varchar2(50) not null,
+MaritalStatus varchar2(50) not null,
+ContactNumber varchar2(50) not null,
+DOB Date not null,
+AccountType varchar2(50) not null,
+InitialDepositAmount varchar2(50) not null,
+BranchName varchar2(50) not null,
+ifsc varchar2(50) not null,
+CitizenStatus varchar2(50) not null,
+PanNumber varchar2(50) not null unique,
+IdType varchar2(50) not null,
+IdNumber varchar2(50) not null,
+RefName varchar2(50) not null,
+RefAccNo varchar2(50) not null,
+RefAdd varchar2(50) not null,
+interestrate varchar2(50) not null,
+custbalance varchar2(50) not null
+);
+
+
+create table Transaction 
+(
+transaction_id varchar2(50) primary key,
+customer_id varchar2(50) not null,
+newcustomerbalance varchar2(50) not null,
+transaction_type varchar2(50) not null,
+transaction_date Date not null,
+transaction_amount varchar2(50) not null,
+constraint fk2 FOREIGN KEY(customer_id) REFERENCES Customerinfo(Customer_id)
+);
+
+
+
+create table loan
+(
+loantype varchar2(50),
+loanid varchar2(50) primary key,
+loanamount varchar2(50),
+loanissuedate varchar2(50),
+loanapplydate varchar2(50),
+rate varchar2(50),
+duration varchar2(50),
+coursefee varchar2(50),
+course varchar2(50),
+fathername varchar2(50),
+fatheroccupation varchar2(50),
+fathertotalexp varchar2(50),
+fatherexpcurcmpy varchar2(50),
+rationcardno varchar2(50),
+familyannualincome varchar2(50),
+annualincome varchar2(50),
+companyname varchar2(50),
+designation varchar2(50),
+totalexp varchar2(50),
+expcurcmpy varchar2(50),
+Customer_id varchar2(50) not null,
+constraint fk1 FOREIGN KEY(Customer_id) REFERENCES Customerinfo(Customer_Id)
+);
+
+
+
+ALTER TABLE Customerinfo
+  ADD alternateaddress varchar2(50);
+
+
+ALTER TABLE Customerinfo
+  ADD alternatecontactno varchar2(50);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
